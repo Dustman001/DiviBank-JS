@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreateComponent } from './create/create.component';
-import { ListComponent } from './list/list.component';
+import { LoansCreateComponent } from './create/create.component';
+import { LoansListComponent } from './list/list.component';
 
 
 
 @NgModule({
   declarations: [
-    CreateComponent,
-    ListComponent
+    LoansCreateComponent,
+    LoansListComponent
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    LoansCreateComponent,
+    LoansListComponent
   ]
 })
 export class LoansModule { }

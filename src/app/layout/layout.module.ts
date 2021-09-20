@@ -4,7 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 
-
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,13 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatButtonModule
+  ],
+  exports:[
+    HeaderComponent,
+    SidebarComponent,
+    FooterComponent
   ]
 })
 export class LayoutModule { }

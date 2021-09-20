@@ -1,1 +1,39 @@
-<p>create works!</p>
+<p>Client Create works</p>
+<form #newClient="ngForm" class="col-md-20">
+  <div class="form-row">
+    <div>
+      <input id="id" name="name" type="hidden" [(ngModel)]="client.id" [value]="0">
+    </div>
+    <div class="form-group col-md-12">
+      <label for="name">Name</label>
+      <input id="name" name="name" #name="ngModel" type="text" [(ngModel)]="client.name"
+      required class="form-control" placeholder="Full Name"/>
+      <div [hidden]="name.valid || name.pristine"
+        class="alert alert-danger">
+        Name is required
+      </div>
+    </div>
+    <div class="form-group col-md-12">
+      <label>BirthDate</label>
+      <input type="text" name="birthdate" #bday="ngModel" required [(ngModel)]="client.birthdate"
+      class="form-control" placeholder="YYYY/MM/DD"/>
+      <div [hidden]="bday.valid || bday.pristine"
+      class="alert alert-danger">
+      BirthDate is required
+      </div>
+    </div>
+    <div class="form-group col-md-16">
+      <label>Contact Information: <input type="text" name="contact" required [(ngModel)]="client.contact"
+        class="form-control" #contact="ngModel" placeholder="Client Contact Information"/>
+        <div [hidden]="contact.valid || contact.pristine"
+        class="alert alert-danger">
+        The Contact Information is required
+        </div>
+      </label>
+    </div>
+    <div class="form-group col-md-8">
+      <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+  </div>
+</form>
+{{client.id}} - {{client.name}} - {{ client.birthdate}} - {{client.contact}}
